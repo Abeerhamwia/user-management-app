@@ -1,0 +1,27 @@
+
+<mat-toolbar color="primary">
+  <mat-icon class="menu-icon" (click)="goBack()">arrow_back</mat-icon>
+  <span class="app-title">User Details</span>
+</mat-toolbar>
+
+<div class="user-details-container">
+  <app-loading-spinner *ngIf="isLoading"></app-loading-spinner>
+  
+  <ng-container *ngIf="!isLoading && !userNotFound">
+    <mat-card class="user-card">
+      <div class="avatar-container">
+        <img [src]="user?.avatar" alt="User Avatar" class="avatar">
+      </div>
+      <div class="user-info">
+        <p class="user-name">First name: {{ user?.first_name }} <br> Last Name: {{ user?.last_name }}</p>
+        <p class="user-email">Email: {{ user?.email }}</p>
+        <p class="user-id">ID: {{ user?.id }}</p>
+      </div>
+    </mat-card>
+  </ng-container>
+
+  
+  <div class="user-not-found" *ngIf="userNotFound">
+    User with ID {{ userId }} not found.
+  </div>
+</div>

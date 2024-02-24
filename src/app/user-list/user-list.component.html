@@ -1,0 +1,22 @@
+<div class="user-list-container">
+  <!-- Show loading spinner when isLoading is true -->
+  <app-loading-spinner *ngIf="isLoading"></app-loading-spinner>
+  
+  <mat-card class="user-card" *ngFor="let user of users" [routerLink]="'/user/' + user.id">
+    <div class="avatar-container">
+      <img [src]="user.avatar" alt="User Avatar" class="avatar">
+    </div>
+    <div class="user-info">
+      <p class="user-name">First name: {{ user.first_name }} <br> Last Name: {{user.last_name }}</p>
+      <p class="user-id">ID: {{ user.id }}</p>
+    </div>
+  </mat-card>
+</div>
+<div class="pagination-controls">
+  <button mat-fab color="primary" (click)="loadPreviousPage()" [disabled]="currentPage === 1">
+    <mat-icon>keyboard_arrow_left</mat-icon>
+  </button>
+  <button mat-fab color="primary" (click)="loadNextPage()" [disabled]="currentPage === totalPages">
+    <mat-icon>keyboard_arrow_right</mat-icon>
+  </button>
+</div>

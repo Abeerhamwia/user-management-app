@@ -1,0 +1,60 @@
+/* Custom styles for the user card and user-details.component */
+.user-list-container, .user-details-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-color: #f0f0f0; 
+}
+
+.user-card {
+    width: 300px;
+    margin: 10px;
+    background-color: rgba(14, 15, 81, 0.1);
+    border-radius: 10px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+    transition: transform 0.2s ease-in-out;
+    backdrop-filter: blur(10px); 
+  }
+
+.user-card:hover {
+  transform: scale(1.05); 
+}
+
+.avatar-container {
+  text-align: center;
+  padding: 20px;
+}
+
+.avatar {
+  max-width: 100px;
+  max-height: 100px;
+  border-radius: 50%;
+}
+
+.user-info {
+  text-align: center;
+  padding: 10px;
+}
+
+.user-name {
+  font-size: 1.2rem;
+  color: #333; 
+}
+
+.user-email {
+  font-size: 1.2rem;
+  color: #333; 
+}
+
+.user-id {
+  font-size: 1rem;
+  color: #777; 
+}
+
+
+
+
+
+
